@@ -6,6 +6,7 @@ class Transactions():
     # implemented by robin
     def __init__(self, db_file):
         self.conn = sqlite3.connect(db_file)
+        self.cur = self.conn.cursor()
         self.conn.execute('''CREATE TABLE IF NOT EXISTS transactions
                             (id INTEGER PRIMARY KEY AUTOINCREMENT,
                              item_no INTEGER NOT NULL,
@@ -15,32 +16,51 @@ class Transactions():
                              description TEXT NOT NULL)''')
         self.conn.commit()
 
-    def get_categories(self):
+    # ignore for now
+    # implemented by robin
+    def show_categories(self):
+        self.conn.execute("SELECT category * FROM transactions")
+
+    # ignore for now
+    def add_catagory(self, category):
         ''' not yet implemented '''
 
-    def add_categories(self, category):
-        ''' not yet implemented '''
-
+    # ignore for now
     def modify_category(self, previous, new):
         ''' not yet implemented '''
 
-    def get_transactions(self):
+
+    def show_transactions(self):
         ''' not yet implemented '''
 
+    # implemented by robin
     def add_transaction(self, item_number, amount, category, date, description):
-        ''' not yet implemented '''
+        self.cur.execute("INSERT INTO transactions VALUES (NULL,?,?,?,?,?)", (item_number, amount, category, date, description))
+        self.conn.commit()
 
-    def delete_transaction(self, item_number):
-        ''' not yet implemented '''
+    # implemented by robin
+    def delete_transaction(self, id):
+        self.cur.execute("DELETE FROM transactions WHERE id=?", (id,))
+        self.conn.commit()
 
+    # implemented by robin
     def summarize_by_date(self):
-        ''' not yet implemented '''
+        self.cur.execute("SELECT date, SUM(amount) FROM transactions GROUP BY date")
+        return self.cur.fetchall()
 
+    # implemented by robin
     def summarize_by_month(self):
-        ''' not yet implemented '''
+        self.cur.execute("SELECT strftime('%m', date) AS month, SUM(amount) FROM transactions GROUP BY month")
+        return self.cur.fetchall()
 
+    # implemented by robin
     def summarize_by_year(self):
-        ''' not yet implemented '''
+        self.cur.execute("SELECT strftime('%Y', date) AS year, SUM(amount) FROM transactions GROUP BY year")
+        return self.cur.fetchall()
 
+    # implemented by robin
     def summarize_by_category(self):
-        ''' not yet implemented '''
+        self.cur.execute("SELECT category, SUM(amount) FROM transactions GROUP BY category")
+        return self.cur.fetchall()
+
+    

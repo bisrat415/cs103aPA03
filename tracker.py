@@ -58,10 +58,10 @@ def run_tracker():
 
 # implemented by robin
 # conformed to pylint - Tal Spector
-def show_catagories(transaction):
+def show_catagories(self):
     ''' shows the list of availbale categories '''
     print("Categories: ")
-    for category in transaction.get_categories():
+    for category in Transactions.show_categories():
         print(category + "\n")
 
 # implemented by robin
@@ -103,8 +103,8 @@ def add_transaction(transaction):
 # conformed to pylint - Tal Spector
 def delete_transaction(transaction):
     ''' deletes a transaction '''
-    item_number = int(input("Enter item number to delete: "))
-    transaction.delete_transaction(item_number)
+    id = int(input("Enter ID: "))
+    transaction.delete_transaction(id)
 
 # implemented by robin
 # conformed to pylint - Tal Spector
