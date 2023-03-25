@@ -16,20 +16,6 @@ class Transactions():
                              description TEXT NOT NULL)''')
         self.conn.commit()
 
-    # ignore for now
-    # implemented by robin
-    def show_categories(self):
-        self.conn.execute("SELECT category * FROM transactions")
-
-    # ignore for now
-    def add_catagory(self, category):
-        ''' not yet implemented '''
-
-    # ignore for now
-    def modify_category(self, previous, new):
-        ''' not yet implemented '''
-
-
     def show_transactions(self):
         ''' not yet implemented '''
 
