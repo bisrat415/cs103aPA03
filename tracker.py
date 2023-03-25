@@ -1,8 +1,10 @@
-import os
-from transactions import transactions
+''' import providing SQL methods '''
+from transactions import Transactions
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def print_menu():
+    ''' Prints the list of available options '''
     print("0. quit")
     print("1. show categories")
     print("2. add category")
@@ -17,9 +19,11 @@ def print_menu():
     print("11. print this menu")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def run_tracker():
+    ''' runs the tracker '''
     db_filename = input("Enter database filename: ")
-    transactions = transactions(db_filename)
+    transactions = Transactions(db_filename)
 
     while True:
         print_menu()
@@ -27,91 +31,114 @@ def run_tracker():
 
         if choice == "0":
             break
-        elif choice == "1":
+        if choice == "1":
             show_catagories(transactions)
-        elif choice == "2":
+        if choice == "2":
             add_catagory(transactions)
-        elif choice == "3":
+        if choice == "3":
             modify_catagory(transactions)
-        elif choice == "4":
+        if choice == "4":
             show_transactions(transactions)
-        elif choice == "5":
+        if choice == "5":
             add_transaction(transactions)
-        elif choice == "6":
+        if choice == "6":
             delete_transaction(transactions)
-        elif choice == "7":
+        if choice == "7":
             summarize_transactions_by_date(transactions)
-        elif choice == "8":
+        if choice == "8":
             summarize_transactions_by_month(transactions)
-        elif choice == "9":
+        if choice == "9":
             summarize_transactions_by_year(transactions)
-        elif choice == "10":
-            summarize_transactions_by_category
-        elif choice == "11":
+        if choice == "10":
+            summarize_transactions_by_category(transactions)
+        if choice == "11":
             print_menu()
         else:
             print("Not a valid input!")
-            run_tracker()
-    
+
 # implemented by robin
+# conformed to pylint - Tal Spector
 def show_catagories(transaction):
+    ''' shows the list of availbale categories '''
     print("Categories: ")
-    for category in transactions.get_categories():
+    for category in transaction.get_categories():
         print(category + "\n")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def add_catagory(transaction):
+    ''' adds a category '''
     category = input("Enter category name: ")
-    transactions.add_category(category)
+    transaction.add_category(category)
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def modify_catagory(transaction):
+    ''' modify an existing category '''
     previous = input("Previous category: ")
     new = input("New category: ")
-    transactions.modify_category(previous, new)
+    transaction.modify_category(previous, new)
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def show_transactions(transaction):
-    print("Transactions: ")
-    for transaction in transactions.get_transactions():
+    ''' shows all transactions '''
+    print("transactions: ")
+    for transaction in transaction.get_transactions():
         print(transaction + "\n")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def add_transaction(transaction):
+    ''' adds a transaction '''
     item_number = int(input("Item number: "))
     amount = float(input("Amount: "))
     category = input("Category: ")
     date = input("Enter date (yyyy-mm-dd): ")
     description = input("Enter description: ")
-    transactions.add_transaction(item_number, amount, category, date, description)
+    transaction.add_transaction(
+        item_number, amount, category, date, description)
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def delete_transaction(transaction):
+    ''' deletes a transaction '''
     item_number = int(input("Enter item number to delete: "))
-    transactions.delete_transaction(item_number)
+    transaction.delete_transaction(item_number)
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def summarize_transactions_by_date(transaction):
-    for date, total in transactions.summarize_by_date().items():
+    ''' summarizes transactions by date '''
+    for date, total in transaction.summarize_by_date().items():
         print(f"{date}: {total}")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def summarize_transactions_by_month(transactions):
+    ''' summarizes transcations by month '''
     for month, total in transactions.summarize_by_month().items():
         print(f"{month}: {total}")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def summarize_transactions_by_year(transactions):
+    ''' summarizes transactions by year '''
     for year, total in transactions.summarize_by_year().items():
         print(f"{year}: {total}")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def summarize_transactions_by_category(transactions):
+    ''' summarizes transactions by category '''
     for category, total in transactions.summarize_by_category().items():
         print(f"{category}: {total}")
 
 # implemented by robin
+# conformed to pylint - Tal Spector
 def main():
+    ''' runs tracker '''
     run_tracker()
+
 
 main()
