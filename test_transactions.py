@@ -18,6 +18,7 @@ def test_show_transactions():
     os.remove("test.db")
 
 # implemented by dakota
+# bug fixed by bisrat
 def test_add_transaction():
     transactions = Transactions("test.db")
     transactions.add_transaction(1, 50, "Food", "2023-03-01", "Lunch")
@@ -25,6 +26,7 @@ def test_add_transaction():
     os.remove("test.db")
 
 # implemented by dakota
+# bug fixed by bisrat
 def test_delete_transaction():
     transactions = Transactions("test.db")
     transactions.add_transaction(1, 50, "Food", "2023-03-01", "Lunch")
@@ -33,6 +35,7 @@ def test_delete_transaction():
     os.remove("test.db")
 
 # implemented by dakota
+# bug fixed by bisrat
 def test_summarize_by_date():
     transactions = Transactions("test.db")
     transactions.add_transaction(1, 50, "Food", "2023-03-01", "Lunch")
@@ -42,6 +45,7 @@ def test_summarize_by_date():
     os.remove("test.db")
 
 # implemented by dakota
+# bug fixed by bisrat
 def test_summarize_by_month():
     transactions = Transactions("test.db")
     transactions.add_transaction(1, 50, "Food", "2023-03-01", "Lunch")
@@ -51,6 +55,7 @@ def test_summarize_by_month():
     os.remove("test.db")
 
 # implemented by dakota
+# bug fixed by bisrat
 def test_summarize_by_year():
     transactions = Transactions("test.db")
     transactions.add_transaction(1, 50, "Food", "2022-03-01", "Lunch")
@@ -60,6 +65,7 @@ def test_summarize_by_year():
     os.remove("test.db")
 
 # implemented by dakota
+# bug fixed by bisrat
 def test_summarize_by_category():
     # Create a Transactions object and add some transactions
     transactions = Transactions("test.db")
