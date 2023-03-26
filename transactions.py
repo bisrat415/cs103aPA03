@@ -22,7 +22,7 @@ class Transactions():
     # implemented by tal
     def show_transactions(self):
         ''' shows all transactions '''
-        self.cur.execute("SELECT * from transactions")
+        self.cur.execute("SELECT * FROM transactions")
         return self.cur.fetchall()
 
     # implemented by robin

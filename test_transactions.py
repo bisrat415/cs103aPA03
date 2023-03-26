@@ -36,7 +36,7 @@ def test_summarize_by_date():
     assert transactions.summarize_by_date() == [("2023-03-01", 150.0), ("2023-03-02", 25.0)]
 
 # implemented by dakota
- def test_summarize_by_month():
+def test_summarize_by_month():
     transactions = Transactions("test.db")
     transactions.add_transaction(1, 50, "Food", "2023-03-01", "Lunch")
     transactions.add_transaction(2, 100, "Shopping", "2023-03-02", "New shoes")
@@ -54,6 +54,7 @@ def test_summarize_by_year():
 # implemented by dakota
 def test_summarize_by_category():
     # Create a Transactions object and add some transactions
+    transactions = Transactions("test.db")
     transactions.add_transaction(1, 10.0, 'groceries', '2022-03-24', 'Bought some food')
     transactions.add_transaction(2, 20.0, 'entertainment', '2022-03-25', 'Bought movie tickets')
     transactions.add_transaction(3, 5.0, 'groceries', '2022-03-25', 'Bought some milk')
