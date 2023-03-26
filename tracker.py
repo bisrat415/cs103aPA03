@@ -52,8 +52,8 @@ def run_tracker():
 def show_transactions(transaction):
     ''' shows all transactions '''
     print("transactions: ")
-    for transaction in transaction.get_transactions():
-        print(transaction + "\n")
+    for transaction in transaction.show_transactions():
+        print(transaction)
 
 # implemented by robin
 # conformed to pylint - Tal Spector
@@ -64,42 +64,41 @@ def add_transaction(transaction):
     category = input("Category: ")
     date = input("Enter date (yyyy-mm-dd): ")
     description = input("Enter description: ")
-    transaction.add_transaction(
-        item_number, amount, category, date, description)
+    transaction.add_transaction(item_number, amount, category, date, description)
 
 # implemented by robin
 # conformed to pylint - Tal Spector
 def delete_transaction(transaction):
     ''' deletes a transaction '''
-    id = int(input("Enter ID: "))
-    transaction.delete_transaction(id)
+    ident = int(input("Enter ID: "))
+    transaction.delete_transaction(ident)
 
 # implemented by robin
 # conformed to pylint - Tal Spector
 def summarize_transactions_by_date(transaction):
     ''' summarizes transactions by date '''
-    for date, total in transaction.summarize_by_date().items():
+    for date, total in transaction.summarize_by_date():
         print(f"{date}: {total}")
 
 # implemented by robin
 # conformed to pylint - Tal Spector
 def summarize_transactions_by_month(transactions):
     ''' summarizes transcations by month '''
-    for month, total in transactions.summarize_by_month().items():
+    for month, total in transactions.summarize_by_month():
         print(f"{month}: {total}")
 
 # implemented by robin
 # conformed to pylint - Tal Spector
 def summarize_transactions_by_year(transactions):
     ''' summarizes transactions by year '''
-    for year, total in transactions.summarize_by_year().items():
+    for year, total in transactions.summarize_by_year():
         print(f"{year}: {total}")
 
 # implemented by robin
 # conformed to pylint - Tal Spector
 def summarize_transactions_by_category(transactions):
     ''' summarizes transactions by category '''
-    for category, total in transactions.summarize_by_category().items():
+    for category, total in transactions.summarize_by_category():
         print(f"{category}: {total}")
 
 # implemented by robin
