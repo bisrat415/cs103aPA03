@@ -1,6 +1,7 @@
 ''' testing based imports '''
 from transactions import Transactions
 import pytest
+import os
 
 # implemented by dakota
 def test_init():
