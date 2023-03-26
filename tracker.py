@@ -1,8 +1,9 @@
 ''' import providing SQL methods '''
 from transactions import Transactions
+# conformed to pylint by tal
+
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def print_menu():
     ''' Prints the list of available options '''
     print("0. quit")
@@ -16,7 +17,6 @@ def print_menu():
     print("8. print this menu")
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def run_tracker():
     ''' runs the tracker '''
     db_filename = input("Enter database filename: ")
@@ -48,7 +48,6 @@ def run_tracker():
             print("Not a valid input!")
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def show_transactions(transaction):
     ''' shows all transactions '''
     print("transactions: ")
@@ -56,7 +55,6 @@ def show_transactions(transaction):
         print(transaction)
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def add_transaction(transaction):
     ''' adds a transaction '''
     item_number = int(input("Item number: "))
@@ -67,42 +65,36 @@ def add_transaction(transaction):
     transaction.add_transaction(item_number, amount, category, date, description)
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def delete_transaction(transaction):
     ''' deletes a transaction '''
     ident = int(input("Enter ID: "))
     transaction.delete_transaction(ident)
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def summarize_transactions_by_date(transaction):
     ''' summarizes transactions by date '''
     for date, total in transaction.summarize_by_date():
         print(f"{date}: {total}")
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def summarize_transactions_by_month(transactions):
     ''' summarizes transcations by month '''
     for month, total in transactions.summarize_by_month():
         print(f"{month}: {total}")
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def summarize_transactions_by_year(transactions):
     ''' summarizes transactions by year '''
     for year, total in transactions.summarize_by_year():
         print(f"{year}: {total}")
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def summarize_transactions_by_category(transactions):
     ''' summarizes transactions by category '''
     for category, total in transactions.summarize_by_category():
         print(f"{category}: {total}")
 
 # implemented by robin
-# conformed to pylint - Tal Spector
 def main():
     ''' runs tracker '''
     run_tracker()
