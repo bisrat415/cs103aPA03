@@ -1,9 +1,11 @@
 ''' allows access to sqlite3 '''
 import sqlite3
 # edited to match pylint when possible - Tal Spector
+
+
 class Transactions():
     ''' class to handle all transactions in given data set '''
-   
+
     # implemented by robin
     def __init__(self, db_file):
         self.conn = sqlite3.connect(db_file)
@@ -17,8 +19,11 @@ class Transactions():
                              description TEXT NOT NULL)''')
         self.conn.commit()
 
+    # implemented by tal
     def show_transactions(self):
-        ''' not yet implemented '''
+        ''' shows all transactions '''
+        self.cur.execute("SELECT *, FROM transactions")
+        return self.cur.fetchall()
 
     # implemented by robin
     def add_transaction(self, item_number, amount, category, date, description):
@@ -42,7 +47,7 @@ class Transactions():
     # implemented by robin
     def summarize_by_month(self):
         ''' summarizes transactions by month '''
-        self.cur.execute('''SELECT strftime('%m', date) AS month, 
+        self.cur.execute('''SELECT strftime('%m', date) AS month,
                             SUM(amount) FROM transactions GROUP BY month''')
         return self.cur.fetchall()
 
@@ -58,4 +63,3 @@ class Transactions():
         ''' summarizes transactions by category '''
         self.cur.execute("SELECT category, SUM(amount) FROM transactions GROUP BY category")
         return self.cur.fetchall()
-    
