@@ -32,7 +32,8 @@ Your code has been rated at 9.64/10
 
 
 tracker results
-Enter database filename: transaction.db
+
+transactions: 
 0. quit
 1. show transactions
 2. add transaction
@@ -44,10 +45,11 @@ Enter database filename: transaction.db
 8. print this menu
 Enter your choice: 2
 Item number: 1
-Amount: 200
-Category: credit
-Enter date (yyyy-mm-dd): 2023-03-21
-Enter description: you got 200      
+Amount: 30
+Category: food
+Enter date (yyyy-mm-dd): 2023-02-15
+Enter description: kbbq
+
 0. quit
 1. show transactions
 2. add transaction
@@ -59,10 +61,63 @@ Enter description: you got 200
 8. print this menu
 Enter your choice: 2
 Item number: 2
-Amount: 400
-Category: withdrawl
-Enter date (yyyy-mm-dd): 2023-03-23
-Enter description: you have taken 400 out 
+Amount: 45
+Category: food
+Enter date (yyyy-mm-dd): 2023-02-20
+Enter description: food 
+
+
+0. quit
+1. show transactions
+2. add transaction
+3. delete transaction
+4. summarize transactions by date
+5. summarize transactions by month
+6. summarize transactions by year
+7. summarize transactions by category
+8. print this menu
+Enter your choice: 2
+Item number: 3
+Amount: 50 
+Category: clothing 
+Enter date (yyyy-mm-dd): 2023-03-05
+Enter description: hoodie 
+
+
+0. quit
+1. show transactions
+2. add transaction
+3. delete transaction
+4. summarize transactions by date
+5. summarize transactions by month
+6. summarize transactions by year
+7. summarize transactions by category
+8. print this menu
+Enter your choice: 2
+Item number: 4
+Amount: 20 
+Category: entertainment 
+Enter date (yyyy-mm-dd): 2023-03-11
+Enter description: netflix
+
+
+0. quit
+1. show transactions
+2. add transaction
+3. delete transaction
+4. summarize transactions by date
+5. summarize transactions by month
+6. summarize transactions by year
+7. summarize transactions by category
+8. print this menu
+Enter your choice: 2
+Item number: 5
+Amount: 7
+Category: drink
+Enter date (yyyy-mm-dd): 2023-03-21
+Enter description: boba
+
+
 0. quit
 1. show transactions
 2. add transaction
@@ -74,9 +129,13 @@ Enter description: you have taken 400 out
 8. print this menu
 Enter your choice: 1
 transactions: 
-(3, 2, 30.48, 'food', '2023-03-25', 'all you can eat sushi')
-(4, 1, 200.0, 'credit', '2023-03-21', 'you got 200 ')
-(5, 2, 400.0, 'withdrawl', '2023-03-23', 'you have taken 400 out ')
+(5, 1, 30.0, 'food', '2023-02-15', 'kbbq')
+(6, 2, 45.0, 'food', '2023-02-20', 'food ')
+(7, 3, 50.0, 'clothing ', '2023-03-05', 'hoodie ')
+(8, 4, 20.0, 'entertainment ', '2023-03-11', 'netflix')
+(9, 5, 7.0, 'drink', '2023-03-21', 'boba')
+
+
 0. quit
 1. show transactions
 2. add transaction
@@ -87,9 +146,11 @@ transactions:
 7. summarize transactions by category
 8. print this menu
 Enter your choice: 4
-2023-03-21: 200.0
-2023-03-23: 400.0
-2023-03-25: 30.48
+2023-02-15: 30.0
+2023-02-20: 45.0
+2023-03-05: 50.0
+2023-03-11: 20.0
+2023-03-21: 7.0
 0. quit
 1. show transactions
 2. add transaction
@@ -99,8 +160,11 @@ Enter your choice: 4
 6. summarize transactions by year
 7. summarize transactions by category
 8. print this menu
+
+
 Enter your choice: 5
-03: 630.48
+02: 75.0
+03: 77.0
 0. quit
 1. show transactions
 2. add transaction
@@ -110,8 +174,10 @@ Enter your choice: 5
 6. summarize transactions by year
 7. summarize transactions by category
 8. print this menu
+
+
 Enter your choice: 6
-2023: 630.48
+2023: 152.0
 0. quit
 1. show transactions
 2. add transaction
@@ -121,10 +187,13 @@ Enter your choice: 6
 6. summarize transactions by year
 7. summarize transactions by category
 8. print this menu
+
+
 Enter your choice: 7
-credit: 200.0
-food: 30.48
-withdrawl: 400.0
+clothing : 50.0
+drink: 7.0
+entertainment : 20.0
+food: 75.0
 0. quit
 1. show transactions
 2. add transaction
@@ -134,8 +203,10 @@ withdrawl: 400.0
 6. summarize transactions by year
 7. summarize transactions by category
 8. print this menu
+
+
 Enter your choice: 3
-Enter ID: 2
+Enter ID: 5
 0. quit
 1. show transactions
 2. add transaction
@@ -145,11 +216,14 @@ Enter ID: 2
 6. summarize transactions by year
 7. summarize transactions by category
 8. print this menu
+
+
 Enter your choice: 1
 transactions: 
-(3, 2, 30.48, 'food', '2023-03-25', 'all you can eat sushi')
-(4, 1, 200.0, 'credit', '2023-03-21', 'you got 200 ')
-(5, 2, 400.0, 'withdrawl', '2023-03-23', 'you have taken 400 out ')
+(6, 2, 45.0, 'food', '2023-02-20', 'food ')
+(7, 3, 50.0, 'clothing ', '2023-03-05', 'hoodie ')
+(8, 4, 20.0, 'entertainment ', '2023-03-11', 'netflix')
+(9, 5, 7.0, 'drink', '2023-03-21', 'boba')
 0. quit
 1. show transactions
 2. add transaction
@@ -159,80 +233,8 @@ transactions:
 6. summarize transactions by year
 7. summarize transactions by category
 8. print this menu
-Enter your choice: 1
-transactions: 
-(3, 2, 30.48, 'food', '2023-03-25', 'all you can eat sushi')
-(4, 1, 200.0, 'credit', '2023-03-21', 'you got 200 ')
-(5, 2, 400.0, 'withdrawl', '2023-03-23', 'you have taken 400 out ')
-0. quit
-1. show transactions
-2. add transaction
-3. delete transaction
-4. summarize transactions by date
-5. summarize transactions by month
-6. summarize transactions by year
-7. summarize transactions by category
-8. print this menu
-Enter your choice: 3
-Enter ID: 1
-0. quit
-1. show transactions
-2. add transaction
-3. delete transaction
-4. summarize transactions by date
-5. summarize transactions by month
-6. summarize transactions by year
-7. summarize transactions by category
-8. print this menu
-Enter your choice: 1
-transactions: 
-(3, 2, 30.48, 'food', '2023-03-25', 'all you can eat sushi')
-(4, 1, 200.0, 'credit', '2023-03-21', 'you got 200 ')
-(5, 2, 400.0, 'withdrawl', '2023-03-23', 'you have taken 400 out ')
-0. quit
-1. show transactions
-2. add transaction
-3. delete transaction
-4. summarize transactions by date
-5. summarize transactions by month
-6. summarize transactions by year
-7. summarize transactions by category
-8. print this menu
-Enter your choice: 3
-Enter ID: 2
-0. quit
-1. show transactions
-2. add transaction
-3. delete transaction
-4. summarize transactions by date
-5. summarize transactions by month
-6. summarize transactions by year
-7. summarize transactions by category
-8. print this menu
-Enter your choice: 3  
-Enter ID: 3
-0. quit
-1. show transactions
-2. add transaction
-3. delete transaction
-4. summarize transactions by date
-5. summarize transactions by month
-6. summarize transactions by year
-7. summarize transactions by category
-8. print this menu
-Enter your choice: 1
-transactions: 
-(4, 1, 200.0, 'credit', '2023-03-21', 'you got 200 ')
-(5, 2, 400.0, 'withdrawl', '2023-03-23', 'you have taken 400 out ')
-0. quit
-1. show transactions
-2. add transaction
-3. delete transaction
-4. summarize transactions by date
-5. summarize transactions by month
-6. summarize transactions by year
-7. summarize transactions by category
-8. print this menu
+
+
 Enter your choice: 8
 0. quit
 1. show transactions
@@ -251,5 +253,24 @@ Enter your choice: 8
 5. summarize transactions by month
 6. summarize transactions by year
 7. summarize transactions by category
-8. print this menu 
+8. print this menu
+
+
+Enter your choice: 1
+transactions: 
+(6, 2, 45.0, 'food', '2023-02-20', 'food ')
+(7, 3, 50.0, 'clothing ', '2023-03-05', 'hoodie ')
+(8, 4, 20.0, 'entertainment ', '2023-03-11', 'netflix')
+(9, 5, 7.0, 'drink', '2023-03-21', 'boba')
+0. quit
+1. show transactions
+2. add transaction
+3. delete transaction
+4. summarize transactions by date
+5. summarize transactions by month
+6. summarize transactions by year
+7. summarize transactions by category
+8. print this menu
+
+
 Enter your choice: 0
