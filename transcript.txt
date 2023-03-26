@@ -16,5 +16,19 @@ test_transactions.py::test_summarize_by_category PASSED                         
 
 ========================================================================== 8 passed in 0.04s ===========================================================================
 
-tracker results 
 
+pylint for tracker.py
+
+------------------------------------
+Your code has been rated at 10.00/10
+
+pylint for transactions.py 
+
+************* Module transactions
+transactions.py:29:4: R0913: Too many arguments (6/5) (too-many-arguments)
+
+-----------------------------------
+Your code has been rated at 9.64/10
+
+
+tracker results
