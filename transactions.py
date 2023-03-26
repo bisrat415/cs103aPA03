@@ -33,9 +33,9 @@ class Transactions():
         self.conn.commit()
 
     # implemented by robin
-    def delete_transaction(self, id):
+    def delete_transaction(self, ident):
         ''' deletes a transaction '''
-        self.cur.execute("DELETE FROM transactions WHERE id=?", (id,))
+        self.cur.execute("DELETE FROM transactions WHERE id=?", (ident,))
         self.conn.commit()
 
     # implemented by robin
