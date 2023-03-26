@@ -28,7 +28,7 @@ def run_tracker():
 
         if choice == "0":
             break
-        elif choice == "1":
+        if choice == "1":
             show_transactions(transactions)
         elif choice == "2":
             add_transaction(transactions)
@@ -48,10 +48,10 @@ def run_tracker():
             print("Not a valid input!")
 
 # implemented by robin
-def show_transactions(transaction):
+def show_transactions(transactions):
     ''' shows all transactions '''
     print("transactions: ")
-    for transaction in transaction.show_transactions():
+    for transaction in transactions.show_transactions():
         print(transaction)
 
 # implemented by robin
